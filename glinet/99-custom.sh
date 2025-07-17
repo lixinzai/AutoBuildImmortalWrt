@@ -17,8 +17,8 @@ else
    . "$SETTINGS_FILE"
 fi
 # 无需判断网卡数量 因为glinet是多网口
-uci set network.lan.ipaddr='192.168.8.1'
-echo "set 192.168.8.1 at $(date)" >> $LOGFILE
+uci set network.lan.ipaddr='192.168.2.1'
+echo "set 192.168.2.1 at $(date)" >> $LOGFILE
 # 判断是否启用 PPPoE
 echo "print enable_pppoe value=== $enable_pppoe" >> $LOGFILE
 if [ "$enable_pppoe" = "yes" ]; then
@@ -43,7 +43,7 @@ uci commit
 
 # 设置编译作者信息
 FILE_PATH="/etc/openwrt_release"
-NEW_DESCRIPTION="Compiled by wukongdaily"
+NEW_DESCRIPTION="Compiled by Neilyo"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
 
 exit 0
