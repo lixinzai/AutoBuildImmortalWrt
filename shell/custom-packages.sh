@@ -6,9 +6,9 @@
 # 首页和网络向导
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-quickstart-zh-cn"
 # 去广告adghome
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-adguardhome"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-adguardhome"
 # 代理相关
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-openclash"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-openclash"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-ssr-plus"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-passwall2"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-nikki-zh-cn"
@@ -19,18 +19,18 @@
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-partexp-zh-cn"
 # 酷猫主题 by sirpdboy 
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-kucat"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-advancedplus"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-advancedplus-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-kucat"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-advancedplus"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-advancedplus-zh-cn"
 # 网络测速 by sirpdboy 
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-netspeedtest"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-netspeedtest-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-netspeedtest"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-netspeedtest-zh-cn"
 # MosDNS
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-mosdns"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-mosdns-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-mosdns"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-mosdns-zh-cn"
 #定时设置
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-autotimeset"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-autotimeset-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-autotimeset"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-autotimeset-zh-cn"
 #微信推送
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-wechatpush"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-wechatpush-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-wechatpush"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-wechatpush-zh-cn"
