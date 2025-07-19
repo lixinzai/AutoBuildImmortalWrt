@@ -111,6 +111,9 @@ else
     echo "⚪️ 未选择 luci-app-openclash"
 fi
 
+    echo "⚪️ 未选择 luci-app-adguardhome"
+fi
+
 # 构建镜像
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Building image with the following packages:"
 echo "$PACKAGES"

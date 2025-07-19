@@ -113,6 +113,18 @@ else
     echo "⚪️ 未选择 luci-app-openclash"
 fi
 
+# 若构建Adguardhome 则添加内核
+if echo "$PACKAGES" | grep -q "luci-app-adguardhome"; then
+    echo "✅ 已选择 luci-app-adguardhome，添加 Adguardhome core"
+    # Download Adguardhome
+    META_URL="https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.63/AdGuardHome_linux_amd64.tar.gz"
+    wget -qO- $META_URL | tar xOvz > /usr/bin/
+    chmod +x files/usr/bin/Adguardhome
+    chmod 755 /etc/init.d/AdGuardHome
+else
+    echo "⚪️ 未选择 luci-app-adguardhome"
+fi
+
 # 构建镜像
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Building image with the following packages:"
 echo "$PACKAGES"
