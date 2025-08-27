@@ -34,3 +34,7 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-autotimeset-zh-cn"
 #微信推送
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-wechatpush"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-wechatpush-zh-cn"
+#lucky
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES lucky"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-lucky"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-lucky-zh-cn"

@@ -52,6 +52,7 @@ PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 #PACKAGES="$PACKAGES luci-app-openclash"
 #PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 PACKAGES="$PACKAGES openssh-sftp-server"
+PACKAGES="$PACKAGES luci-proto-wireguard"
 #PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # 静态文件服务器dufs(推荐)
 #PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
@@ -91,6 +92,10 @@ PACKAGES="$PACKAGES luci-i18n-autotimeset-zh-cn"
 #微信推送
 PACKAGES="$PACKAGES luci-app-wechatpush"
 PACKAGES="$PACKAGES luci-i18n-wechatpush-zh-cn"
+#lucky
+PACKAGES="$PACKAGES lucky"
+PACKAGES="$PACKAGES luci-app-lucky"
+PACKAGES="$PACKAGES luci-i18n-lucky-zh-cn"
 
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
