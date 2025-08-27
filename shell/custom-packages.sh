@@ -29,8 +29,8 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-netspeedtest-zh-cn"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-mosdns"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-mosdns-zh-cn"
 #定时设置
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-autotimeset"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-autotimeset-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-taskplan"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-taskplan-zh-cn"
 #微信推送
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-wechatpush"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-wechatpush-zh-cn"

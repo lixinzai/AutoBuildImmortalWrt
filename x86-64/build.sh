@@ -87,8 +87,8 @@ PACKAGES="$PACKAGES luci-i18n-netspeedtest-zh-cn"
 PACKAGES="$PACKAGES luci-app-mosdns"
 PACKAGES="$PACKAGES luci-i18n-mosdns-zh-cn"
 #定时设置
-PACKAGES="$PACKAGES luci-app-autotimeset"
-PACKAGES="$PACKAGES luci-i18n-autotimeset-zh-cn"
+PACKAGES="$PACKAGES luci-app-taskplan"
+PACKAGES="$PACKAGES luci-i18n-taskplan-zh-cn"
 #微信推送
 PACKAGES="$PACKAGES luci-app-wechatpush"
 PACKAGES="$PACKAGES luci-i18n-wechatpush-zh-cn"
