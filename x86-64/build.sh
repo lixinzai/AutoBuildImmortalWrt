@@ -53,6 +53,7 @@ PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 #PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 PACKAGES="$PACKAGES openssh-sftp-server"
 PACKAGES="$PACKAGES luci-proto-wireguard"
+PACKAGES="$PACKAGES qemu-ga"
 #PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # 静态文件服务器dufs(推荐)
 #PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
