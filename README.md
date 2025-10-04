@@ -6,17 +6,28 @@
 ## 🤔 这是什么？
 它是一个工作流。可快速构建 带docker且支持自定义固件大小的 immortalWrt
 > 1、支持自定义固件大小 默认1GB <br>
-> 2、支持预安装docker（可选）<br>
-> 3、仅支持x86-64<br>
-> 4、新增第三方软件包的集成功能 https://github.com/wukongdaily/AutoBuildImmortalWrt/discussions/209
+> 2、支持可选预安装docker（可选）<br>
+> 3、支持按需增加[第三方软件](https://github.com/wukongdaily/store/blob/master/README.md)  如何集成 https://github.com/wukongdaily/AutoBuildImmortalWrt/discussions/209 <br>
+> 4、点击这里查看👉🏻[全部支持的机型列表](https://github.com/wukongdaily/AutoBuildImmortalWrt/blob/master/SUPPORT.md) 👈🏻<br>
+> 5、在UI上 新增luci版本的可选项，默认最新版24.10.3 https://github.com/wukongdaily/AutoBuildImmortalWrt/discussions/426
 
+## [基本用法步骤](https://github.com/wukongdaily/AutoBuildImmortalWrt/wiki) 👈🏻
+1、fork本项目<br>
+2、在fork后的项目中 点击【action】 找到需要的工作流后 run-workflow<br>
+## 虚拟机建议用哪条工作流？
+<img width="30%" height="30%" alt="image" src="https://github.com/user-attachments/assets/743027e0-584a-4842-bfb3-0dff22de9101" /> <br>
+虚拟机用户建议直接构建ISO镜像 此过程分2个阶段 阶段一构建固件imm 阶段二将其封装iso格式的安装器 总计耗时大约7-8分钟  <br>
+ISO在虚拟机引导后 跑码结束后，在命令行输入 `ddd` 按提示 完成虚拟磁盘的写入（安装immortalwrt到虚拟磁盘）<br>
+这样做也比较灵活 避免了格式转换和解压 同时还可以指定安装某个磁盘 而安装后的磁盘剩余空间也能加以利用。<br>
+详细的解说 可以参考我的另一个项目 [img-installer](https://github.com/wukongdaily/armbian-installer) 
 
 ## 如何查询imm仓库内有哪些插件
 https://mirrors.sjtug.sjtu.edu.cn/immortalwrt/releases/24.10.2/packages/x86_64/luci/
 ## 如何查询imm仓库外目前可以集成哪些插件
-https://github.com/wukongdaily/store/tree/master/run
+https://github.com/wukongdaily/store
 > 具体方法 https://github.com/wukongdaily/AutoBuildImmortalWrt/discussions/209
-## 第三方插件集成的原理详见以下视频
+## 【视频教程】如何集成第三方插件？
+https://www.youtube.com/watch?v=KN6AJYV1hBI <br>
 https://www.youtube.com/watch?v=7i6BQeitUtE
 
 ## 旁路由的用户必读
@@ -39,6 +50,12 @@ https://www.youtube.com/watch?v=7i6BQeitUtE
 - 综合上述特点，【单网口设备】应该先接路由器，先在上级路由器查看一下它的ip 再访问。
 - 上述特点 你都可以通过 `99-custom.sh` 配置和调整
 
+## 特别说明
+本项目构建的固件 为了易用性 wan口防火墙规则入站 是开启的，待首次调试完毕后，建议自行关闭。操作方法如下
+网络——防火墙—— wan 的入站 选择拒绝 然后保存并应用即可。更多讨论[ 请参考这个话题](https://github.com/wukongdaily/AutoBuildImmortalWrt/discussions/341)
+<img width="3860" height="870" alt="image" src="https://github.com/user-attachments/assets/d826bccd-f0df-4d4a-877d-b711b81fcf1a" />
+同时此项设置的相关代码详见 `files/etc/uci-defaults/99-custom.sh` 行首
+
 ## ❤️其它GitHub Action项目推荐🌟 （建议收藏）⬇️
 - ### [一键生成run插件] 🆕
 - https://github.com/wukongdaily/RunFilesBuilder<br>
@@ -52,6 +69,8 @@ https://www.youtube.com/watch?v=7i6BQeitUtE
 https://wkdaily.cpolar.cn/15
 # 🌟鸣谢
 ### https://github.com/immortalwrt
+### https://github.com/ophub/flippy-openwrt-actions
+### https://github.com/ophub/amlogic-s9xxx-openwrt
 ### https://github.com/sirpdboy
 ### https://github.com/wukongdaily/ib-overlay
 

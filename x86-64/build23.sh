@@ -1,5 +1,7 @@
 #!/bin/bash
 # Log file for debugging
+source shell/custom-packages.sh
+echo "第三方软件包: $CUSTOM_PACKAGES"
 LOGFILE="/tmp/uci-defaults-log.txt"
 echo "Starting 99-custom.sh at $(date)" >> $LOGFILE
 echo "编译固件大小为: $PROFILE MB"
@@ -18,88 +20,42 @@ EOF
 echo "cat pppoe-settings"
 cat /home/build/immortalwrt/files/etc/config/pppoe-settings
 
-# ============= 同步第三方插件库==============
-# 下载 run 文件仓库
-echo "🔄 Cloning run file repo..."
-git clone --depth=1 https://github.com/lixinzai/Luci.git /tmp/store-run-repo
+if [ -z "$CUSTOM_PACKAGES" ]; then
+  echo "⚪️ 未选择 任何第三方软件包"
+else
+  # ============= 同步第三方插件库==============
+  # 正在同步第三方软件仓库
+  echo "🔄 正在同步第三方软件仓库 Cloning run file repo..."
+  git clone --depth=1 https://github.com/wukongdaily/store.git /tmp/store-run-repo
 
-# 拷贝 run/x86 下所有 run 文件和ipk文件 到 extra-packages 目录
-mkdir -p /home/build/immortalwrt/extra-packages
-cp -r /tmp/store-run-repo/run/x86/* /home/build/immortalwrt/extra-packages/
+  # 拷贝 run/x86 下所有 run 文件和ipk文件 到 extra-packages 目录
+  mkdir -p /home/build/immortalwrt/extra-packages
+  cp -r /tmp/store-run-repo/run/x86/* /home/build/immortalwrt/extra-packages/
 
-echo "✅ Run files copied to extra-packages:"
-ls -lh /home/build/immortalwrt/extra-packages/*.run
-# 解压并拷贝ipk到packages目录
-sh prepare-packages.sh
-ls -lah /home/build/immortalwrt/packages/
+  echo "✅ Run files copied to extra-packages:"
+  ls -lh /home/build/immortalwrt/extra-packages/*.run
+  # 解压并拷贝ipk到packages目录
+  sh shell/prepare-packages.sh
+  ls -lah /home/build/immortalwrt/packages/
+fi
 
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建..."
-
-# ============= imm仓库内的插件==============
 # 定义所需安装的包列表 下列插件你都可以自行删减
 PACKAGES=""
 PACKAGES="$PACKAGES curl"
-#PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-firewall-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
-#PACKAGES="$PACKAGES luci-app-argon-config"
-#PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
-#PACKAGES="$PACKAGES luci-i18n-opkg-zh-cn"
-#PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
-#PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
-#PACKAGES="$PACKAGES luci-app-openclash"
-#PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 PACKAGES="$PACKAGES openssh-sftp-server"
 PACKAGES="$PACKAGES luci-proto-wireguard"
 PACKAGES="$PACKAGES openssh-client"
 PACKAGES="$PACKAGES openssh-keygen"
 PACKAGES="$PACKAGES qemu-ga"
 PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
-#PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
-# 静态文件服务器dufs(推荐)
-#PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
-
-# ============= imm仓库外的第三方插件==============
-# ============= 若启用 则打开注释 ================
-# istore商店
-#PACKAGES="$PACKAGES luci-app-store"
-# 首页和网络向导
-#PACKAGES="$PACKAGES luci-i18n-quickstart-zh-cn"
-# 去广告adghome
-PACKAGES="$PACKAGES luci-app-adguardhome"
-# 代理相关
-PACKAGES="$PACKAGES luci-app-openclash"
-#PACKAGES="$PACKAGES luci-app-ssr-plus"
-#PACKAGES="$PACKAGES luci-app-passwall2"
-#PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
-# VPN
-#PACKAGES="$PACKAGES luci-app-tailscale"
-#PACKAGES="$PACKAGES luci-i18n-tailscale-zh-cn"
-# 分区扩容 by sirpdboy 
-#PACKAGES="$PACKAGES luci-app-partexp"
-#PACKAGES="$PACKAGES luci-i18n-partexp-zh-cn"
-# 酷猫主题 by sirpdboy 
-PACKAGES="$PACKAGES luci-theme-kucat"
-PACKAGES="$PACKAGES luci-app-advancedplus"
-PACKAGES="$PACKAGES luci-i18n-advancedplus-zh-cn"
-# 网络测速 by sirpdboy 
-PACKAGES="$PACKAGES luci-app-netspeedtest"
-PACKAGES="$PACKAGES luci-i18n-netspeedtest-zh-cn"
-# MosDNS
-PACKAGES="$PACKAGES luci-app-mosdns"
-PACKAGES="$PACKAGES luci-i18n-mosdns-zh-cn"
-#定时设置
-PACKAGES="$PACKAGES luci-app-taskplan"
-PACKAGES="$PACKAGES luci-i18n-taskplan-zh-cn"
-#微信推送
-PACKAGES="$PACKAGES luci-app-wechatpush"
-PACKAGES="$PACKAGES luci-i18n-wechatpush-zh-cn"
-#lucky
-PACKAGES="$PACKAGES lucky"
-PACKAGES="$PACKAGES luci-app-lucky"
-PACKAGES="$PACKAGES luci-i18n-lucky-zh-cn"
+# ======== shell/custom-packages.sh =======
+# 合并imm仓库以外的第三方插件
+PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
 
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
