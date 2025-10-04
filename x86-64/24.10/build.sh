@@ -56,6 +56,7 @@ PACKAGES="$PACKAGES luci-proto-wireguard"
 PACKAGES="$PACKAGES openssh-client"
 PACKAGES="$PACKAGES openssh-keygen"
 PACKAGES="$PACKAGES qemu-ga"
+PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
 #PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # 静态文件服务器dufs(推荐)
 #PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
