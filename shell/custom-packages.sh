@@ -16,15 +16,14 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-openclash"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-passwall2"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-nikki-zh-cn"
 # VPN
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-tailscale"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-tailscale"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-tailscale-zh-cn"
 # 分区扩容 by sirpdboy 
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-partexp-zh-cn"
 # 酷猫主题 by sirpdboy 
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-kucat"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-advancedplus"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-advancedplus-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-kucat-config luci-i18n-kucat-config-zh-cn"
 # 网络测速 by sirpdboy 
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-netspeedtest luci-i18n-netspeedtest-zh-cn"
 # MosDNS
