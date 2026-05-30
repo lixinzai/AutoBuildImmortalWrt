@@ -58,7 +58,6 @@ PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
 #25.12
 PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
-PACKAGES="$PACKAGES luci-app-openclash"
 PACKAGES="$PACKAGES openssh-sftp-server"
 
 # 文件管理器
