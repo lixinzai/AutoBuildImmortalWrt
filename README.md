@@ -1,6 +1,5 @@
 # AutoBuildImmortalWrt
 [![GitHub](https://img.shields.io/github/license/wukongdaily/AutoBuildImmortalWrt.svg?label=LICENSE&logo=github&logoColor=%20)](https://github.com/wukongdaily/AutoBuildImmortalWrt/blob/master/LICENSE)
-[![Github](https://github.com/lixinzai/AutoBuildImmortalWrt/releases)]
 
 ## 🤔 这是什么？
 它是一个工作流。可快速构建 带docker且支持自定义固件大小的 immortalWrt，自用
@@ -38,7 +37,7 @@ https://mirrors.sjtug.sjtu.edu.cn/immortalwrt/releases/25.12.0/packages/x86_64/l
 
 ## 该固件默认属性？(必读)
 - 该固件刷入【单网口设备】默认采用DHCP模式,自动获得ip。类似NAS的做法
-- 该固件刷入【多网口设备】默认WAN口采用DHCP模式，LAN 口ip为  `192.168.2.1` <br>其中eth0为WAN 其余网口均为LAN
+- 该固件刷入【多网口设备】默认WAN口采用DHCP模式，LAN 口ip为  `192.168.2.1` <br>其中eth1为WAN 其余网口均为LAN
 - 若用户在工作流中勾选了拨号信息 则WAN口模式为pppoe拨号模式。
 - 建议拨号用户使用之前重启一次光猫。
 - 综合上述特点，【单网口设备】应该先接路由器，先在上级路由器查看一下它的ip 再访问。
